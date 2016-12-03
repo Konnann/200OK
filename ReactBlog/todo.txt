@@ -1,0 +1,18 @@
+!WIP!
+
+5 pages min
+3 tables in kinvey
+
+Pages:
+    //1st priority
+        1.Home/layout - Nyctoss
+        2.Dashboard
+        3.Profile - Konan
+        5.creation of posts - Konan
+        6.editing of posts
+        7.Login/logout - Nyctoss
+        8.register - Nyctoss
+
+    //2nd priority
+        1.profile settings
+
