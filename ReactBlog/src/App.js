@@ -6,14 +6,18 @@ import {Link} from 'react-router';
 class App extends Component {
   render() {
     return(
-      <div className="container">
+      <div>
           <Navbar>
-            <li className="navbar-brand">200OK</li>
-            <li className="nav-item"><Link to="#" className="navbar-link">Home</Link></li>
-            <li className="nav-item"><Link to="#" className="navbar-link">LogIn</Link></li>
-            <li className="nav-item"><Link to="#" className="navbar-link">Register</Link></li>
+            <div className="btn-group">
+              <li className="nav-item" style={{paddingTop:'7px'}}>
+                <Link to="login" className="btn btn-success">Make yourself at home</Link>
+              </li>
+            </div>
           </Navbar>
+        <div className="container">
+          {this.props.children}
 
+        </div>
       </div>
     );
   }
