@@ -1,0 +1,59 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+ReactBlog/node_modules
+
+# testing
+ReactBlog/coverage
+
+# production
+ReactBlog/build
+
+# misc
+ReactBlog/.DS_Store
+ReactBlog/.env
+ReactBlog/npm-debug.log
+
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff:
+ReactBlog/.idea/workspace.xml
+ReactBlog/.idea/tasks.xml
+
+# Sensitive or high-churn files:
+ReactBlog/.idea/dataSources/
+ReactBlog/.idea/dataSources.ids
+ReactBlog/.idea/dataSources.xml
+ReactBlog/.idea/dataSources.local.xml
+ReactBlog/.idea/sqlDataSources.xml
+ReactBlog/.idea/dynamic.xml
+ReactBlog/.idea/uiDesigner.xml
+
+# Gradle:
+ReactBlog/.idea/gradle.xml
+ReactBlog/.idea/libraries
+
+# Mongo Explorer plugin:
+ReactBlog/.idea/mongoSettings.xml
+
+## File-based project format:
+ReactBlog/*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+ReactBlog/out/
+
+# mpeltonen/sbt-idea plugin
+ReactBlog/.idea_modules/
+
+# JIRA plugin
+ReactBlog/atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+ReactBlog/com_crashlytics_export_strings.xml
+ReactBlog/crashlytics.properties
+ReactBlog/crashlytics-build.properties
+ReactBlog/fabric.properties

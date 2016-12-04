@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
-export default class Nabbar extends Component {
+export default class Navbar extends Component {
     render() {
         return(
-            <div display="block">
-            <nav>
-                <ul className="nav navbar-nav">
-                    {this.props.children}
-                </ul>
-            </nav>
+
+            <nav className="navbar navbar-default">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <Link to="/" className="navbar-brand">200OK</Link>
+                    </div>
+                    <ul className="nav navbar-nav pull-right">
+                        {this.props.children}
+                    </ul>
                 </div>
+            </nav>
+
         )
     }
 }
