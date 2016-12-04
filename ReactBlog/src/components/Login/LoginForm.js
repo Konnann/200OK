@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 
-export default class RegisterForm extends Component {
+export default class LoginForm extends Component {
     render() {
         return (
-            <div id="registerForm" className="text-center center-block bg-info">
-                <h3>Create your home</h3>
+            <div id="loginForm" className="text-center center-block bg-info">
+                <h3>Enter your home</h3>
                 <form onSubmit={this.props.onSubmit}>
                     <div className="form-group">
                         <label>Username</label>
@@ -28,7 +28,7 @@ export default class RegisterForm extends Component {
                             onChange={this.props.onChange}
                         />
                     </div>
-                    <button type="submit" className="btn btn-default" >Register</button>
+                    <button type="submit" className="btn btn-success" >Log In</button>
                 </form>
             </div>
         )

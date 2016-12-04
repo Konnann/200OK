@@ -9,7 +9,7 @@ export default class Navbar extends Component {
                     <div className="navbar-header">
                         <Link to="/" className="navbar-brand">200OK</Link>
                     </div>
-                    <ul className="nav navbar-nav  pull-right">
+                    <ul className="nav navbar-nav pull-right">
                         {this.props.children}
                     </ul>
                 </div>

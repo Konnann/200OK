@@ -1,7 +1,13 @@
 import React, {Component} from "react";
 import {Link} from 'react-router';
 
-export default class Home extends Component {
+export default class HomeController extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {isLogged: false}
+
+    }
+
     render() {
         return (
             <div className="container-fluid text-center">
