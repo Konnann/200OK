@@ -61,7 +61,7 @@
     margin: 0 auto;
     width: 600px;
 }
-.create-form div{
+.create-form form{
     margin-top: 50px;
     background-color: white;
     border-radius: 30px;
@@ -71,7 +71,7 @@
     padding-bottom: 30px;
 
 }
-.create-form > div > span {
+.create-form > form > span {
     display: block;
     color: dimgray;
     font-family: "Comic Sans MS";
@@ -99,4 +99,10 @@
     height: 200px;
     width: 400px;
     font-family: "Comic Sans MS";
+}
+
+.button{
+    margin: 0 auto !important;
+    width: 150px !important;
+    display: block !important;
 }
