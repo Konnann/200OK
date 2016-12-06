@@ -30,8 +30,9 @@ function getPostDetails(id, onSuccess) {
 
 function loadMyPosts(callback) {
     
+
     let query= `?query={"authorId":"${sessionStorage.getItem('userId')}"}&sort={"_kmd.ect":-1}`;
-    
+
     requester.get('appdata', 'posts' + query, 'kinvey')
         .then(callback);
 }
