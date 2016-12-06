@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import RegisterForm from './RegisterForm'
-import {register} from '../../models/userModel'
+import {register} from '../../../models/userModel'
 
 export default class RegisterController extends Component {
     constructor(props) {
@@ -39,6 +39,10 @@ export default class RegisterController extends Component {
     }
 
     render() {
+        if(sessionStorage.getItem("authToken")) {
+            this.context.router.push('/my-profile')
+        }
+        
         return(
             <div>
                 <RegisterForm

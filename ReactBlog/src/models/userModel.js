@@ -9,8 +9,29 @@ function saveSession(userInfo) {
     sessionStorage.setItem('userId', userId);
     let username = userInfo.username;
     sessionStorage.setItem('username', username);
+    let avatarImage = userInfo.avatarImage;
+    sessionStorage.setItem('avatar', avatarImage);
+    let coverImage = userInfo.coverImage;
+    sessionStorage.setItem('cover', coverImage);
 
     observer.onSessionUpdate();
+}
+
+
+function updateSettings(settings) {
+    let data = {};
+    for (let entry in settings) {
+        if (entry !== '' || entry !== 'undefined') {
+            data[entry] = settings[entry];
+        }
+    }
+
+    let userId = sessionStorage.getItem("userId");
+
+    requester.update('user', userId, data, 'kinvey')
+        .then(function (userInfo) {
+            saveSession(userInfo)
+        })
 }
 
 // user/login
@@ -57,4 +78,4 @@ function logout(callback) {
         callback(true);
     }
 }
-export {login, register, logout};
+export {login, register, logout, updateSettings};

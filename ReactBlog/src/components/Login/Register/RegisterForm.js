@@ -3,34 +3,35 @@ import React, {Component} from 'react';
 export default class RegisterForm extends Component {
     render() {
         return (
-            <div id="registerForm" className="text-center center-block bg-info">
-                <h3>Create your home</h3>
-                <form onSubmit={this.props.onSubmit}>
+                <form id="register-form" onSubmit={this.props.onSubmit} style={{display: 'none'}}>
                     <div className="form-group">
-                        <label>Username</label>
                         <input
                             type="text"
                             name="username"
                             className="form-control"
                             id="username"
-                            placeholder="Email"
+                            placeholder="Username"
                             onChange={this.props.onChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label>Password</label>
                         <input
                             type="password"
                             name="password"
                             className="form-control"
-                            id="username"
+                            id="password"
                             placeholder="Password"
                             onChange={this.props.onChange}
                         />
                     </div>
-                    <button type="submit" className="btn btn-default" >Register</button>
+                    <div className="form-group">
+                        <div className="row">
+                            <div className="col-sm-6 col-sm-offset-3">
+                                <button type="submit" className="form-control btn btn-register" >Register</button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
-            </div>
         )
     }
 }

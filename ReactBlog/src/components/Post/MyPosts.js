@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {loadMyPosts} from '../../models/postsModel'
-
+import Post from '../common/postView'
 
 export default class MyPosts extends Component {
 
@@ -8,7 +8,10 @@ export default class MyPosts extends Component {
         super(props);
         this.state = { posts: [] };
         this.bindEventHandlers();
-        loadMyPosts(this.onLoadSuccess());
+    }
+
+    componentDidMount() {
+        loadMyPosts(this.onLoadSuccess);
     }
 
     bindEventHandlers() {
@@ -16,17 +19,36 @@ export default class MyPosts extends Component {
     }
 
     onLoadSuccess(response){
-        //if teams loaded successfully, filter them
-        console.log(response);
-        console.dir(response);
-
+        let posts = [];
+        for(let entry of response) {
+            let post = {};
+            post.id = entry._id;
+            post.content = entry.content;
+            post.title = entry.title;
+            post.authorName = entry.authorName;
+            post.postedOn = new Date(entry._kmd.ect).toLocaleString();
+            posts.push(post);
+        }
+        posts = posts.sort((a,b) => b.postedOn - a.postedOn);
+        this.setState({posts: posts});
+        console.log(this.state.posts)
     }
     
     render(){
+        let entries = [];
+        this.state.posts.forEach(function (post) {
+           entries.push(<Post
+               key={post.id}
+               postId={post.id}
+               by={post.authorName}
+               postTitle={post.title}
+               postedOn={post.postedOn}
+               postContent={post.content}/>)
+        });
 
         return(
             <div>
-                Posts
+                {entries}
             </div>
         )
     }

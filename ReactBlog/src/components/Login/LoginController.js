@@ -39,6 +39,10 @@ export default class LoginController extends Component {
     }
 
     render() {
+        if(sessionStorage.getItem("authToken")) {
+            this.context.router.push('/my-profile')
+        }
+
         return(
             <div>
                 <LoginForm
