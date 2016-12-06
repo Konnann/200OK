@@ -9,8 +9,9 @@ import Home from "./components/Home/HomeController"
 import Register from "./components/Register/RegisterController"
 import Login from "./components/Login/LoginController";
 import Logout from './components/Logout/LogoutController';
-import Profile from "./components/Profile/ProfilePage"
-import Create from "./components/Profile/CreatePost"
+import Profile from "./components/Profile/ProfilePage";
+import Create from "./components/Post/CreatePost";
+import MyPosts from "./components/Post/MyPosts";
 
 
 ReactDOM.render(
@@ -19,6 +20,7 @@ ReactDOM.render(
             <IndexRoute component={Home}/>
             <Route path="my-profile" component={Profile}>
                 <Route path="create" component={Create}/>
+                <Route path="my-posts" component={MyPosts}/>
             </Route>
             <Route path="register" component={Register}/>
             <Route path="login" component={Login}/>

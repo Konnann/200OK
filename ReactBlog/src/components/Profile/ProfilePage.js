@@ -11,7 +11,7 @@ export default class ProfilePage extends Component {
                 <ProfileHeader />
                     <ProfileMenu>
                         <li><Link to="/my-profile/create">Create Post</Link></li>
-                        <li><Link to="#">My Posts</Link></li>
+                        <li><Link to="/my-profile/my-posts">My Posts</Link></li>
                         <li><Link to="#">Liked Posts</Link></li>
                     </ProfileMenu>
                     <div className="profile-content">

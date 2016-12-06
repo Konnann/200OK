@@ -46,7 +46,7 @@ class App extends Component {
                     <div className="">
                         <li className="btn-group" style={{paddingTop:'7px'}}>
                             <Link to="/my-profile" className="btn btn-info nav-item">Profile</Link>
-                            <Link to="posts" className="btn btn-info nav-item">My Posts</Link>
+                            <Link to="/my-profile/my-posts" className="btn btn-info nav-item">My Posts</Link>
                             <Link to="logout" className="btn btn-danger nav-item">Logout</Link>
                         </li>
                     </div>

@@ -13,4 +13,12 @@ function create(title, content, callback) {
         .then(callback(true));
 
 }
-export {create};
+function loadMyPosts(callback) {
+    
+    let query= `?query={"authorID":"${sessionStorage.getItem('userId')}"}`;
+    
+    requester.get('appdata', 'posts/' + query, 'kinvey')
+        .then(callback);
+}
+export {create,
+        loadMyPosts};
