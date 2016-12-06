@@ -15,9 +15,9 @@ function create(title, content, callback) {
 }
 function loadMyPosts(callback) {
     
-    let query= `?query={"authorID":"${sessionStorage.getItem('userId')}"}`;
+    let query= `?query={"authorId":"${sessionStorage.getItem('userId')}"}`;
     
-    requester.get('appdata', 'posts/' + query, 'kinvey')
+    requester.get('appdata', 'posts' + query, 'kinvey')
         .then(callback);
 }
 export {create,
