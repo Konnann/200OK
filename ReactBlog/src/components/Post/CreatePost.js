@@ -32,7 +32,7 @@ export default class CreatePost extends Component {
 
     onSubmitResponse(response){
         if(response === true) {
-            this.context.router.push('/my-profile');
+            this.context.router.push('/my-profile/my-posts');
         } else {
             this.setState({submitDisabled: true});
         }

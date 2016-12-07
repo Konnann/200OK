@@ -29,17 +29,20 @@ function getPostDetails(id, onSuccess) {
 }
 
 function loadMyPosts(callback) {
-<<<<<<< HEAD
     let query= `?query={"authorId":"${sessionStorage.getItem('userId')}"}&sort={"_kmd.ect":-1}`;
 
-=======
-    
->>>>>>> 6810f05ceb44c46d69a9579519c9f2d0403e50da
     requester.get('appdata', 'posts' + query, 'kinvey')
         .then(callback);
 }
+
+function deletePost(postId, callback) {
+    requester.deleteData('appdata', 'posts/' + postId, 'kinvey')
+        .then(callback);
+}
+
 export {create,
         loadMyPosts,
         getPostDetails,
-updatePost,
-getAllPosts};
+        updatePost,
+        getAllPosts,
+        deletePost};

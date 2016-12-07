@@ -26,7 +26,7 @@ export default class Settings extends Component {
 
     onSubmit(event) {
         event.preventDefault();
-        console.log(updateSettings(this.state));
+        console.log('Hello');
     }
 
     render() {

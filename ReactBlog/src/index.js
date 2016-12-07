@@ -23,8 +23,7 @@ ReactDOM.render(
             <Route path="my-profile" component={Profile}>
                 <Route path="settings" component={Settings} />
                 <Route path="create" component={Create}/>
-                <Route path="my-posts" component={MyPosts}>
-                </Route>
+                <Route path="my-posts" component={MyPosts}/>
                 <Route path="editPost/:id" component={EditPost}/>
             </Route>
             <Route path="register" component={Register}/>
