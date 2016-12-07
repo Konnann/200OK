@@ -14,7 +14,7 @@ function create(title, content, callback) {
 }
 
 function getAllPosts(onSuccess) {
-    requester.get('appdata', 'posts', 'kinvey')
+    requester.get('appdata', 'posts?sort={"_kmd.ect":-1}', 'kinvey')
         .then(onSuccess)
 }
 

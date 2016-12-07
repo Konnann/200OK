@@ -21,21 +21,28 @@ export default class Post extends Component {
 
 
     render() {
+        let edit = null;
+        let del = null;
+        if (this.props.canEdit) {
+            del = <button className="btn btn-link" onClick={this.deletePostWrapper}>X</button>
+            edit = <div className="row">
+                        <small className="text-muted col-md-1">
+                            <Link to={"/my-profile/editPost/" + this.props.postId}>Edit</Link>
+                        </small>
+                    </div>
+        }
+
         return (
             <div id={this.props.postId} className="post panel panel-default">
                 <div className="panel-heading">
                     <p className="pull-right ">
                         by {this.props.by} on <small>{this.props.postedOn}</small>
-                        <button className="btn btn-link" onClick={this.deletePostWrapper}>X</button>
+                        {del}
                     </p>
                     <div className="panel-title col-md-0">
                         {this.props.postTitle}
                     </div>
-                    <div className="row">
-                        <small className="text-muted col-md-1">
-                            <Link to={"/my-profile/editPost/" + this.props.postId}>Edit</Link>
-                        </small>
-                    </div>
+                    {edit}
                 </div>
                 <div className="panel-body">
                     {this.props.postContent}

@@ -27,9 +27,9 @@ export default class MyPosts extends Component {
             post.title = entry.title;
             post.authorName = entry.authorName;
             post.postedOn = new Date(entry._kmd.ect).toLocaleString();
+            post.canEdit = true;
             posts.push(post);
         }
-        posts = posts.sort((a,b) => b.postedOn - a.postedOn);
         this.setState({posts: posts});
         console.log(this.state.posts)
     }
@@ -43,7 +43,8 @@ export default class MyPosts extends Component {
                by={post.authorName}
                postTitle={post.title}
                postedOn={post.postedOn}
-               postContent={post.content}/>)
+               postContent={post.content}
+                canEdit={post.content}/>)
         });
 
         return(

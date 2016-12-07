@@ -24,9 +24,14 @@ export default class Dashboard extends Component {
             post.authorName = entry.authorName;
             post.postedOn = new Date(entry._kmd.ect).toLocaleString();
             posts.push(post);
+            if (entry._acl.creator === sessionStorage.getItem('userId')) {
+                post.canEdit = true;
+            } else {
+                post.canEdit = false;
+            }
         }
         posts = posts.sort((a,b) => b.postedOn - a.postedOn);
-        console.log(posts)
+        console.log(posts);
         this.setState({posts: posts});
     }
 
@@ -34,20 +39,21 @@ export default class Dashboard extends Component {
         if (this.state.posts) {
             let entries = [];
             this.state.posts.forEach(function (post) {
-                entries.push(<Post
-                    key={post.id}
-                    postId={post.id}
-                    by={post.authorName}
-                    postTitle={post.title}
-                    postedOn={post.postedOn}
-                    postContent={post.content}/>)
+                entries.push(
+                    <Post
+                        key={post.id}
+                        postId={post.id}
+                        by={post.authorName}
+                        postTitle={post.title}
+                        postedOn={post.postedOn}
+                        postContent={post.content}
+                        canEdit={post.canEdit}
+                    />
+                )
             });
             return(
-                <div>
+                <div className="container">
                     {entries}
-                    <div className="panel panel-default">
-                        <div className="panel-heading">hello</div>
-                    </div>
                 </div>
             )
         }
