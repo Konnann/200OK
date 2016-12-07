@@ -14,8 +14,8 @@ export default class Navbar extends Component {
                         <Link to="/dashboard" className="navbar-brand">200OK</Link>
                     </div>
                     <ul className="nav navbar-nav pull-right">
+                        <li><Link to="dashboard" className="">Dashboard</Link></li>
                         <li><Link to="/my-profile" className="">Profile</Link></li>
-                        <li><Link to="/my-profile/my-posts" className="">My Posts</Link></li>
                         <li><Link to="logout" className="">Logout</Link></li>
                     </ul>
                 </div>
