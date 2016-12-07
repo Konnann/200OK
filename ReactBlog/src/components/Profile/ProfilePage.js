@@ -28,7 +28,6 @@ export default class ProfilePage extends Component {
                            <ProfileMenu>
                                <li><Link to="/my-profile/create" className="btn btn-default">Create Post</Link></li>
                                <li><Link to="/my-profile/my-posts" className="btn btn-default">My Posts</Link></li>
-                               <li><Link to="/my-profile/likesPosts" className="btn btn-default">Liked Posts</Link></li>
                                <li><Link to="/my-profile/settings" className="btn btn-default">Settings</Link></li>
                            </ProfileMenu>
                        </div>
